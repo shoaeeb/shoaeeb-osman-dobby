@@ -2,7 +2,7 @@ import { LoginFormData } from "./pages/Login";
 import { RegisterFormData } from "./pages/Register";
 import { PostResponseType, PostType } from "../../backend/src/shared/types";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL as string;
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL as string) || "";
 
 export const register = async (data: RegisterFormData) => {
   const response = await fetch(`${API_BASE_URL}/api/v1/signup`, {
